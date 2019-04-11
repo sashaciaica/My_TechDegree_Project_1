@@ -1,8 +1,5 @@
 from random import randint
-# starting_range = int(input("Please enter STARTING range: "))
-# ending_range = int(input("Please enter ENDING range: "))
 ran_num = randint(1, 10)  # Pick a random number between 1 and 10.
-# print("Your range is ", starting_range , "and", ending_range)
 
 def start_game():
     try:
