@@ -6,6 +6,13 @@ def start_game():
         guess = int(input("Welcome: Please type a random number between 1 and 10 "))
         guesses = 1
 
+        if guess in range(1,10):
+            breakpoint()
+        elif guess < 0:
+            raise ZeroDivisionError
+        else:
+            print("Out of range")
+
         while guess != ran_num:
             if guess > ran_num:
                 print("Your guess is too high")
@@ -15,9 +22,10 @@ def start_game():
                 print("Your guess is too low")
                 guess = int(input("Welcome: Please type a random number between 1 and 10 "))
                 guesses = guesses + 1
-
+    except ZeroDivisionError:
+        print("Ups. Bellow zero value. Try again")
     except:
-        print("Ooops. I said a number")
+        print("No way. I said a number not a string")
     else:
         print("Success")
         print("It took you ", guesses, "of guesses")
